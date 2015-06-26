@@ -1,4 +1,8 @@
-<h1>The <%= @league.name %> players that wear the number <%= params[:number] %> are: </h1>
+<% if @players.length == 1 %>
+	<h1>The <%= @league.name %> player that wears the number <%= params[:number] %> is:</h1>
+<% else %>
+	<h1>The <%= @league.name %> players that wear the number <%= params[:number] %> are:</h1>
+<% end %>
 
 <table class="team_table">
 	<tr>
