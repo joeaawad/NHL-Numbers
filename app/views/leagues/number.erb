@@ -1,0 +1,7 @@
+<h1>Here is the jersey number and number of players currently wearing it in the <%= @league.name %>:</h1>
+
+<table class="display_league">
+	<% @all_number_totals.each do |key,value| %>
+		<a href="/leagues/<%= @league.abbreviation %>/numbers/<%= key %>">The number <%= key %> is worn by <%= value.length %> players in the <%= @league.abbreviation %></a><br>
+	<% end %>
+</table>
