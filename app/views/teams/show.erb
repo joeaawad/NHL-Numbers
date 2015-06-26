@@ -9,7 +9,7 @@
 	<% @players.each do |player| %>
 		<tr>
 			<td><%= player.number %></td>
-			<td><a href="http://www.nhl.com/ice/player.htm?id=<%= player.nhl_website_id %>"><%= player.name %></a></td>
+			<td><a href="http://www.nhl.com/ice/player.htm?id=<%=player.nhl_website_id%>"><%= player.name %></a></td>
 			<td><%= player.position %></td>
 		</tr>
 	<% end %>

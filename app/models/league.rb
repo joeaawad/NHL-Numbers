@@ -17,7 +17,7 @@ class League < ActiveRecord::Base
 
   def search_players_by_number(current_number)
   	number_players = []
-  	players.each do |current_player|
+  	self.players.each do |current_player|
   		if current_player.number == current_number
   			number_players << current_player
   		end
@@ -26,7 +26,7 @@ class League < ActiveRecord::Base
   end
 
   def possible_numbers_array
-  	possible_numbers.split(',').map{|number|number.to_i}
+  	self.possible_numbers.split(',').map{|number|number.to_i}
   end
 
 end
