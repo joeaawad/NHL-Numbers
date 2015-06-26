@@ -1,0 +1,16 @@
+<h1>The <%= @league.name %> players that wear the number <%= params[:number] %> are: </h1>
+
+<table class="team_table">
+	<tr>
+		<th>Name</th>
+		<th>Team</th>
+		<th>Position</th>
+	</tr>
+	<% @players.each do |player| %>
+		<tr>
+			<td><a href="http://www.nhl.com/ice/player.htm?id=<%=player.nhl_website_id%>"><%= player.name %></a></td>
+			<td><a href="/leagues/<%=@league.abbreviation%>/teams/<%=player.team.abbreviation%>"><%= player.team.full_name %></a></td>
+			<td><%= player.position %></td>
+		</tr>
+	<% end %>
+</table>
