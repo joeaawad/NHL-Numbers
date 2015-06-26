@@ -5,6 +5,7 @@ class CreatePlayers < ActiveRecord::Migration
   		t.integer :number, :limit => 2
   		t.string :position, :limit => 20
   		t.string :name, :limit => 100
+  		t.integer :nhl_website_id, :limit => 8
 
   		t.timestamps
   	end
