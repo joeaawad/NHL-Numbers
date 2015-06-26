@@ -1,4 +1,4 @@
-nhl = League.create!(name: "National Hockey League",abbreviation: "NHL")
+nhl = League.create!(name: "National Hockey League",abbreviation: "NHL",possible_numbers: (0..99).to_a)
 
 teams = [
 	["Anaheim", "Ducks", "ANA"],
@@ -37,7 +37,7 @@ teams.each do |team|
 	nhl.teams.create!(location: team[0], nickname: team[1], abbreviation: team[2])
 end
 
-# http://hfboards.hockeysfuture.com/showthread.php?t=1596119
+# link from http://hfboards.hockeysfuture.com/showthread.php?t=1596119
 
 nhl.teams.each do |team|
 	response = HTTParty.get("http://nhlwc.cdnak.neulion.com/fs1/nhl/league/teamroster/#{team.abbreviation}/iphone/clubroster.json")
