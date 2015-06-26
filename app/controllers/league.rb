@@ -15,3 +15,10 @@ get '/leagues/:league_abbreviation/teams' do
 	@teams = @league.teams
 	erb :'teams/index'
 end
+
+get '/leagues/:league_abbreviation/teams/:team_abbreviation' do
+	@league = find_league
+	@team = find_team
+	@players = @team.players.sort_by {|player| player.number}
+	erb :'teams/show'
+end

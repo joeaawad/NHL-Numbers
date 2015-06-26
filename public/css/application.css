@@ -1,0 +1,9 @@
+.team_table td {
+	border: 1px solid black;
+	padding: .25em;
+}
+
+.team_table th {
+	border: 2px solid black;
+	padding: .25em;
+}

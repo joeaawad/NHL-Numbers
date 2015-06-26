@@ -1,0 +1,16 @@
+<h1>The roster of the <%= @team.full_name %> of the <%= @league.name %> is:</h1>
+
+<table class="team_table">
+	<tr>
+		<th>Number</th>
+		<th>Name</th>
+		<th>Position</th>
+	</tr>
+	<% @players.each do |player| %>
+		<tr>
+			<td><%= player.number %></td>
+			<td><a href="http://www.nhl.com/ice/player.htm?id=<%= player.nhl_website_id %>"><%= player.name %></a></td>
+			<td><%= player.position %></td>
+		</tr>
+	<% end %>
+</table>

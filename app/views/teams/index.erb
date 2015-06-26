@@ -1,0 +1,5 @@
+<h1>Please select a <%= @league.name %> team:</h1>
+
+<% @teams.each do |team| %>
+	<a href="/leagues/<%=@league.abbreviation%>/teams/<%=team.abbreviation%>"><%= team.full_name %></a><br>
+<% end %>
