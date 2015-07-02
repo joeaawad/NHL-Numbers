@@ -1,11 +1,11 @@
 <table class="display_league center">
-  <% all_number_totals.each do |key,value| %>
-    <% if value.empty? %>
-      <span>No players wear the number <%= key %> in the <%= league.abbreviation %></span><br>
-    <% elsif value.length == 1 %>
-      <a href="/leagues/<%= league.abbreviation %>/numbers/<%= key %>">There is <%= value.length %> player that wears the number <%= key %> in the <%= league.abbreviation %></a><br>
+  <% all_number_totals.each do |number,count| %>
+    <% if count == 0 %>
+      <span>No players wear the number <%= number %> in the <%= league.abbreviation %></span><br>
+    <% elsif count == 1 %>
+      <a href="/leagues/<%= league.abbreviation %>/numbers/<%= number %>">There is <%= count %> player that wears the number <%= number %> in the <%= league.abbreviation %></a><br>
     <% else %>
-      <a href="/leagues/<%= league.abbreviation %>/numbers/<%= key %>">There are <%= value.length %> players that wear the number <%= key %> in the <%= league.abbreviation %></a><br>
+      <a href="/leagues/<%= league.abbreviation %>/numbers/<%= number %>">There are <%= count %> players that wear the number <%= number %> in the <%= league.abbreviation %></a><br>
     <% end %>
   <% end %>
 </table>

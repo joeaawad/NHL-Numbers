@@ -6,7 +6,7 @@ end
 
 get '/leagues/:league_abbreviation/popularity' do
 	@league = find_league
-	@all_number_totals = @league.all_number_totals.sort_by {|key,value| value.length}.reverse
+	@all_number_totals = @league.popularity_number_totals
 	erb :'leagues/sort_popularity'
 end
 
