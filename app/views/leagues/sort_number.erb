@@ -1,13 +1,3 @@
 <h1>Here are the jersey numbers and the number of players currently wearing it in the <%= @league.name %>:</h1>
 
-<table class="display_league">
-	<% @all_number_totals.each do |key,value| %>
-		<% if value.empty? %>
-			<span>No players wear the number <%= key %> in the <%= @league.abbreviation %></span><br>
-		<% elsif value.length == 1 %>
-			<a href="/leagues/<%= @league.abbreviation %>/numbers/<%= key %>">The number <%= key %> is worn by <%= value.length %> player in the <%= @league.abbreviation %></a><br>
-		<% else %>
-			<a href="/leagues/<%= @league.abbreviation %>/numbers/<%= key %>">The number <%= key %> is worn by <%= value.length %> players in the <%= @league.abbreviation %></a><br>
-		<% end %>
-	<% end %>
-</table>
+<%= erb :'leagues/_sort_number_table', :locals => { :all_number_totals => @all_number_totals, :league => @league } %>
